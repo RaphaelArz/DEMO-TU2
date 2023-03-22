@@ -16,6 +16,7 @@ class ConditionTest {
     private boolean estMembre;
 
     private boolean estPasMembre;
+    private String etat;
 
     @BeforeEach
     void setUp() {
@@ -81,5 +82,24 @@ class ConditionTest {
 
     @Test
     void calculerReductionEtat() {
+
+        //si abime:
+        etat = "Abimé";
+        double expected = 30;
+        double actual = Condition.calculerReductionEtat(etat);
+        assertEquals(expected,actual);
+
+        //si tres abime:
+        etat = "Très abimé";
+        expected = 30;
+        actual = Condition.calculerReductionEtat(etat);
+        assertEquals(expected,actual);
+
+        //si bon etat:
+        etat="bon";
+        expected=10;
+        actual=Condition.calculerReductionEtat(etat);
+        assertEquals(actual,expected);
+
     }
 }
