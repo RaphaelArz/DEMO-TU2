@@ -18,6 +18,8 @@ class ConditionTest {
     private boolean estPasMembre;
     private String etat;
 
+    private  int prix;
+
     @BeforeEach
     void setUp() {
         nbJour25=25;
@@ -60,6 +62,12 @@ class ConditionTest {
 
     @Test
     void calculerMontantrembourse() {
+        //si plus 30 jours :
+        Livres=Livres;
+        etat="abimé";
+        double actual= Condition.calculerMontantrembourse(nbJour35,Livres,estMembre,etat,prix);
+        double expected= 0;
+        assertEquals(expected,actual);
 
     }
 
@@ -100,6 +108,7 @@ class ConditionTest {
         expected=10;
         actual=Condition.calculerReductionEtat(etat);
         assertEquals(actual,expected);
+
 
     }
 }
